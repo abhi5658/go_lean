@@ -36,6 +36,10 @@ func main() {
 	var i int
 	var e, java, python bool
 	fmt.Println("declared variables", i, e, java, python)
+	var lang = "go-lang" // no type needed, will deduce from initialised value
+	var f, fifa = false, true
+	var g, h int = 1, 2
+	fmt.Println("initialised vars", lang, f, fifa, g, h)
 }
 
 /*
@@ -46,4 +50,5 @@ sum for 2 and 3 is:  5
 after swapped string-b string-a
 naked return is: 4 20
 declared variables 0 false false false
+initialised vars go-lang false true 1 2
 */

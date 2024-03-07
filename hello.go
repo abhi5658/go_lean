@@ -32,6 +32,10 @@ func main() {
 	fmt.Println("after swapped", a, b)
 	c, d := nakedFunc(16)
 	fmt.Println("naked return is:", c, d)
+
+	var i int
+	var e, java, python bool
+	fmt.Println("declared variables", i, e, java, python)
 }
 
 /*
@@ -41,4 +45,5 @@ hello abhishek. How are you?
 sum for 2 and 3 is:  5
 after swapped string-b string-a
 naked return is: 4 20
+declared variables 0 false false false
 */

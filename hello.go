@@ -15,12 +15,20 @@ func add(x, y int) int { // unexported as function name starts with small letter
 	return x + y
 }
 
+func swap(x, y string) (string, string) {
+	return y, x
+}
+
 func main() {
 	fmt.Println("message is: ", quote.Go())
 	fmt.Println(Hello("abhishek"))
-  fmt.Println("sum for 2 and 3 is: ", add(2,3))
+	fmt.Println("sum for 2 and 3 is: ", add(2, 3))
+	a, b := swap("string-a", "string-b")
+	fmt.Println("after swapped", a, b)
 }
+
 // $> go run .
 // message is:  Don't communicate by sharing memory, share memory by communicating.
 // hello abhishek. How are you?
 // sum for 2 and 3 is:  5
+// after swapped string-b string-a

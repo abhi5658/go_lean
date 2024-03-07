@@ -24,6 +24,10 @@ func nakedFunc(sum int) (x, y int) {
 	return
 }
 
+var abd = 123 // works
+// xyz := 123 // does not work
+// Outside a function, every statement begins with a keyword (var, func, and so on) and so the := construct is not available.
+
 func main() {
 	fmt.Println("message is: ", quote.Go())
 	fmt.Println(Hello("abhishek"))
@@ -40,6 +44,8 @@ func main() {
 	var f, fifa = false, true
 	var g, h int = 1, 2
 	fmt.Println("initialised vars", lang, f, fifa, g, h)
+	abc := 234 // := short assignment statement can be used in place of a var declaration with implicit type.
+	fmt.Println("short assignment decalred variable abc:", abc)
 }
 
 /*
@@ -51,4 +57,5 @@ after swapped string-b string-a
 naked return is: 4 20
 declared variables 0 false false false
 initialised vars go-lang false true 1 2
+short assignment decalred variable abc: 234
 */

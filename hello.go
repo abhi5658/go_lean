@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+	"math"
+	"math/cmplx"
 	"math/rand"
 	"rsc.io/quote"
 )
@@ -52,6 +54,14 @@ func main() {
 	var uninitialisedBoolean bool
 	var uninitialisedString string
 	fmt.Printf("uninitialised variables: %v %v %v %q\n", uninitialisedInteger, uninitialisedFloat, uninitialisedBoolean, uninitialisedString)
+	var (
+		ToBe     bool       = false
+		MaxInt   uint64     = 1<<64 - 1
+		zComplex complex128 = cmplx.Sqrt(-5 + 12i)
+	)
+	fmt.Printf("Type: %T Value: %v\n", ToBe, ToBe)
+	fmt.Printf("Type: %T Value: %v\n", MaxInt, MaxInt)
+	fmt.Printf("Type: %T Value: %v\n", zComplex, zComplex)
 }
 
 /*

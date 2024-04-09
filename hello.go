@@ -70,6 +70,14 @@ func main() {
 	var squareRoot float64 = math.Sqrt(float64(x*x + y*y))
 	var z uint = uint(squareRoot)
 	fmt.Println("conversion", x, y, z)
+
+	v := 42 // inferred type int
+	fmt.Printf("v is of type %T\n", v)
+	//v = "abc" // cannot assign string to an int now
+	w := "xyz"
+	fmt.Printf("w is of type %T\n", w)
+	u := true
+	fmt.Printf("u is of type %T\n", u)
 }
 
 /*
@@ -88,5 +96,9 @@ Type: bool Value: false
 Typre: uint64 Value: 18446744073709551615
 Type: complex128 Value: (2+3i)
 conversion 3 4 5
+v is of type int
+w is of type string
+u is of type bool
+
 
 */

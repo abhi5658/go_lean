@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-
+	"math/rand"
 	"rsc.io/quote"
 )
 
@@ -30,6 +30,7 @@ var abd = 123 // works
 
 func main() {
 	fmt.Println("message is: ", quote.Go())
+	fmt.Println("random number is: ", rand.Intn(100000))
 	fmt.Println(Hello("abhishek"))
 	fmt.Println("sum for 2 and 3 is: ", add(2, 3))
 	a, b := swap("string-a", "string-b")

@@ -78,6 +78,15 @@ func main() {
 	fmt.Printf("w is of type %T\n", w)
 	u := true
 	fmt.Printf("u is of type %T\n", u)
+
+	const Pi = 3.14
+	const World = "Duniya"
+	fmt.Println("Hello", World)
+	fmt.Println("Happy", Pi, "Day")
+
+	const Truth = true
+	//Truth = false // cannot change value of const
+	fmt.Println("Go rules?", Truth)
 }
 
 /*
@@ -99,6 +108,7 @@ conversion 3 4 5
 v is of type int
 w is of type string
 u is of type bool
-
-
+Hello Duniya
+Happy 3.14 Day
+Go rules? true
 */

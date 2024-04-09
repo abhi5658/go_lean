@@ -54,20 +54,28 @@ func main() {
 	var uninitialisedBoolean bool
 	var uninitialisedString string
 	fmt.Printf("uninitialised variables: %v %v %v %q\n", uninitialisedInteger, uninitialisedFloat, uninitialisedBoolean, uninitialisedString)
+
 	var (
 		ToBe     bool       = false
 		MaxInt   uint64     = 1<<64 - 1
 		zComplex complex128 = cmplx.Sqrt(-5 + 12i)
 	)
 	fmt.Printf("Type: %T Value: %v\n", ToBe, ToBe)
-	fmt.Printf("Type: %T Value: %v\n", MaxInt, MaxInt)
+	fmt.Printf("Typre: %T Value: %v\n", MaxInt, MaxInt)
 	fmt.Printf("Type: %T Value: %v\n", zComplex, zComplex)
+
+	var x, y int = 3, 4
+	//error: cannot use (x * x + y * y) (value of type int) as float64 value in argument to math.Sqrt
+	//var squareRoot float64 = math.Sqrt((x*x + y*y))
+	var squareRoot float64 = math.Sqrt(float64(x*x + y*y))
+	var z uint = uint(squareRoot)
+	fmt.Println("conversion", x, y, z)
 }
 
 /*
 $> go run .
 message is:  Don't communicate by sharing memory, share memory by communicating.
-random number is:  47944
+random number is:  628
 hello abhishek. How are you?
 sum for 2 and 3 is:  5
 after swapped string-b string-a
@@ -76,4 +84,9 @@ declared variables 0 false false false
 initialised vars go-lang false true 1 2
 short assignment decalred variable abc: 234
 uninitialised variables: 0 0 false ""
+Type: bool Value: false
+Typre: uint64 Value: 18446744073709551615
+Type: complex128 Value: (2+3i)
+conversion 3 4 5
+
 */

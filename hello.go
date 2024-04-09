@@ -47,12 +47,17 @@ func main() {
 	fmt.Println("initialised vars", lang, f, fifa, g, h)
 	abc := 234 // := short assignment statement can be used in place of a var declaration with implicit type.
 	fmt.Println("short assignment decalred variable abc:", abc)
+	var uninitialisedInteger int
+	var uninitialisedFloat float64
+	var uninitialisedBoolean bool
+	var uninitialisedString string
+	fmt.Printf("uninitialised variables: %v %v %v %q\n", uninitialisedInteger, uninitialisedFloat, uninitialisedBoolean, uninitialisedString)
 }
 
 /*
 $> go run .
 message is:  Don't communicate by sharing memory, share memory by communicating.
-random number is:  14738
+random number is:  47944
 hello abhishek. How are you?
 sum for 2 and 3 is:  5
 after swapped string-b string-a
@@ -60,4 +65,5 @@ naked return is: 4 20
 declared variables 0 false false false
 initialised vars go-lang false true 1 2
 short assignment decalred variable abc: 234
+uninitialised variables: 0 0 false ""
 */

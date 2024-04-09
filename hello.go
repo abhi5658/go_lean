@@ -30,6 +30,11 @@ var abd = 123 // works
 // xyz := 123 // does not work
 // Outside a function, every statement begins with a keyword (var, func, and so on) and so the := construct is not available.
 
+func needInt(x int) int { return x*10 + 1 }
+func needFloat(x float64) float64 {
+	return x * 0.1
+}
+
 func main() {
 	fmt.Println("message is: ", quote.Go())
 	fmt.Println("random number is: ", rand.Intn(100000))
@@ -87,6 +92,25 @@ func main() {
 	const Truth = true
 	//Truth = false // cannot change value of const
 	fmt.Println("Go rules?", Truth)
+
+	const (
+		// Create a huge number by shifting a 1 bit left 100 places.
+		// In other words, the binary number that is 1 followed by 100 zeroes.
+		Big = 1 << 100
+		// Shift it right again 99 places, so we end up with 1<<1, or 2.
+		Small = Big >> 99
+	)
+
+	truth := true
+
+	fmt.Println(truth)
+
+	//fmt.Println("Big:", Big, "Small", Small) // error - cannot use Big (untyped int constant 1267650600228229401496703205376) as int value in argument to fmt.Println (overflows)
+	//fmt.Println("needInt Big", needInt(Big)) // error - cannot use Big (untyped int constant 1267650600228229401496703205376) as int value in argument to needInt (overflows)
+	fmt.Println("needFloat Big:", needFloat(Big))
+	fmt.Println("needFloat Small", needFloat(Small))
+	fmt.Println("needInt Small", needInt(Small))
+
 }
 
 /*
@@ -111,4 +135,7 @@ u is of type bool
 Hello Duniya
 Happy 3.14 Day
 Go rules? true
+needFloat Big: 1.2676506002282295e+29
+needFloat Small 0.2
+needInt Small 21
 */

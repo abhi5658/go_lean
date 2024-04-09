@@ -52,6 +52,7 @@ func main() {
 /*
 $> go run .
 message is:  Don't communicate by sharing memory, share memory by communicating.
+random number is:  14738
 hello abhishek. How are you?
 sum for 2 and 3 is:  5
 after swapped string-b string-a
